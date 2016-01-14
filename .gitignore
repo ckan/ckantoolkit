@@ -1,0 +1,4 @@
+*.pyc
+ckantoolkit.egg-info/*
+build/*
+dist/*
