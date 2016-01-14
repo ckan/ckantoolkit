@@ -1,5 +1,10 @@
 import sys
 
+# XXX: required to prevent a mysterious
+# "TypeError: expected string or Unicode object, NoneType found"
+# in the _initialize() import statement
+import ckan
+
 class _CKANToolkit(object):
     """
     Late initialization to match ckan.plugins.toolkit
