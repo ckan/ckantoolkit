@@ -21,7 +21,14 @@ class _CKANToolkit(object):
     def __getattr__(self, name):
         if not self._toolkit:
             self._initialize()
-        value = getattr(self._toolkit, name)
+        try:
+            value = getattr(self._toolkit, name)
+        except AttributeError:
+            # backports here:
+            if name == 'ungettext':
+                from ckan.common import ungettext as value
+            else:
+                raise
         setattr(self, name, value) # skip this function next time
         return value
 
