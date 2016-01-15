@@ -1,26 +1,28 @@
 # ckantoolkit
 
-ckantoolkit is a library that wraps ckan.plugins.toolkit with backported
-attributes to ease developing CKAN extensions that work with a wide
-range of CKAN versions.
+ckantoolkit is a library that wraps `ckan.plugins.toolkit` with backported
+attributes. This library is useful for writing extensions that work with
+a wide range of CKAN versions.
 
 ## Example
 
 ```python
-from ckan.plugins.toolkit import ungettext # CKAN >= 2.5 only
+# compatile with CKAN >= 2.5 only
+from ckan.plugins.toolkit import ungettext
 ```
 
 becomes:
 
 ```python
+# compatible with all CKAN versions!
 from ckantoolkit import ungettext
 ```
 
-## Extras
+## ckantoolkit.tests
 
 ckantoolkit includes a `tests` submodule that points to the correct
-ckan test module. If your extension builds on ckan's test factories
-your:
+ckan test module. e.g. If your extension builds on ckan's test factories
+your import code:
 
 ```python
 try:
