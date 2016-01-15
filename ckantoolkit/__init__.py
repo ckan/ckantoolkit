@@ -27,6 +27,8 @@ class _CKANToolkit(object):
             # backports here:
             if name == 'ungettext':
                 from ckan.common import ungettext as value
+            elif name == 'DefaultGroupForm':
+                from ckan.lib.plugins import DefaultGroupForm as value
             else:
                 raise
         setattr(self, name, value) # skip this function next time
