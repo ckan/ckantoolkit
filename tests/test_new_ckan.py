@@ -10,8 +10,8 @@ class TestNewCKAN(object):
 
     def tearDown(self):
         sys.path.remove(HERE + '/new_ckan')
-        for m in sys.modules:
-            if m.startswith('ckan.'):
+        for m in list(sys.modules):
+            if m.startswith('ckan.', 'ckantoolkit'):
                 del sys.modules[m]
 
     def test_import_ckan(self):
