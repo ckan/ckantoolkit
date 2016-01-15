@@ -1,5 +1,7 @@
 # ckantoolkit
 
+[![Circle CI](https://circleci.com/gh/ckan/ckantoolkit.svg?style=svg)](https://circleci.com/gh/ckan/ckantoolkit)
+
 ckantoolkit is a library that wraps `ckan.plugins.toolkit` with backported
 attributes. This library is useful for writing extensions that work with
 a wide range of CKAN versions.
