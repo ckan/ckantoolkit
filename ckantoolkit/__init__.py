@@ -29,6 +29,8 @@ class _CKANToolkit(object):
                 from ckan.common import ungettext as value
             elif name == 'DefaultGroupForm':
                 from ckan.lib.plugins import DefaultGroupForm as value
+            elif name == 'missing':
+                from ckan.lib.navl.dictization_functions import missing as value
             else:
                 raise
         setattr(self, name, value) # skip this function next time
