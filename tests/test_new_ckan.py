@@ -4,12 +4,15 @@ import os
 
 HERE = os.path.split(__file__)[0]
 
-class TestOldCKAN(object):
+class TestNewCKAN(object):
     def setUp(self):
         sys.path.append(HERE + '/new_ckan')
 
     def tearDown(self):
         sys.path.remove(HERE + '/new_ckan')
+        for m in sys.modules:
+            if m.startswith('ckan.'):
+                del sys.modules[m]
 
     def test_import_ckan(self):
         import ckan
