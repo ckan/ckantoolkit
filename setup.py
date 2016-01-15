@@ -15,7 +15,7 @@ setup(
     author_email='ian@excess.org',
     url='https://github.com/ckan/ckantoolkit',
     license='AGPL',
-    modules=['ckantoolkit'],
+    packages=['ckantoolkit'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[

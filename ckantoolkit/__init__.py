@@ -9,6 +9,8 @@ class _CKANToolkit(object):
     """
     Late initialization to match ckan.plugins.toolkit
     """
+    __path__ = __path__
+
     def __init__(self):
         self._toolkit = None
 
@@ -19,7 +21,9 @@ class _CKANToolkit(object):
     def __getattr__(self, name):
         if not self._toolkit:
             self._initialize()
-        return getattr(self._toolkit, name)
+        value = getattr(self._toolkit, name)
+        setattr(self, name, value) # skip this function next time
+        return value
 
     def __dir__(self):
         if not self._toolkit:
