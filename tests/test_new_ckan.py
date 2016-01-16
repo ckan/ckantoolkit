@@ -30,3 +30,7 @@ class TestNewCKAN(object):
     def test_import_missing(self):
         from ckantoolkit import missing
         assert missing == 'four from toolkit'
+
+    def test_import_tests(self):
+        from ckantoolkit.tests.helpers import thing
+        assert thing == 'in the right place'
