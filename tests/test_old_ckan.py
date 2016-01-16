@@ -23,3 +23,10 @@ class TestOldCKAN(object):
         from ckantoolkit import ungettext
         assert ungettext == 'many things'
 
+    def test_import_DefaultGroupForm(self):
+        from ckantoolkit import DefaultGroupForm
+        assert DefaultGroupForm == 'formy'
+
+    def test_import_missing(self):
+        from ckantoolkit import missing
+        assert missing == 'present and reporting'
