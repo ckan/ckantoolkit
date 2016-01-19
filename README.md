@@ -9,7 +9,7 @@ a wide range of CKAN versions.
 ## Example
 
 ```python
-# compatile with CKAN >= 2.5 only
+# compatible with CKAN >= 2.5 only
 from ckan.plugins.toolkit import ungettext
 ```
 
