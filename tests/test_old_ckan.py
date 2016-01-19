@@ -17,7 +17,7 @@ class TestOldCKAN(object):
 
     def test_import_literal(self):
         from ckantoolkit import literal
-        assert literal == 'hitler'
+        assert literal == 'figurative'
 
     def test_import_ungettext(self):
         from ckantoolkit import ungettext
