@@ -34,3 +34,15 @@ class TestNewCKAN(object):
     def test_import_tests(self):
         from ckantoolkit.tests.helpers import thing
         assert thing == 'in the right place'
+
+    def test_import_StopOnError(self):
+        from ckantoolkit import StopOnError
+        assert StopOnError == 'five from toolkit'
+
+    def test_import_DefaultOrganizationForm(self):
+        from ckantoolkit import DefaultOrganizationForm
+        assert DefaultOrganizationForm == 'six from toolkit'
+
+    def test_import_h(self):
+        from ckantoolkit import h
+        assert h == 'seven from toolkit'

@@ -1,1 +1,2 @@
 DefaultGroupForm = 'formy'
+DefaultOrganizationForm = 'disorderly'
