@@ -24,6 +24,14 @@ class _CKANToolkit(object):
                 from ckan.lib.plugins import DefaultGroupForm as value
             elif name == 'missing':
                 from ckan.lib.navl.dictization_functions import missing as value
+            elif name == 'StopOnError':
+                from ckan.lib.navl.dictization_functions import StopOnError as value
+            elif name == 'DefaultOrganizationForm':
+                from ckan.lib.plugins import DefaultOrganizationForm as value
+            elif name == 'h':
+                import pylons
+                from ckantoolkit.shims import HelpersNoMagic
+                value = HelpersNoMagic(pylons.config['pylons.h'])
             else:
                 raise
         setattr(self, name, value) # skip this function next time

@@ -1,6 +1,7 @@
 import sys
 import os
 
+from nose.tools import assert_raises
 
 HERE = os.path.split(__file__)[0]
 
@@ -34,3 +35,22 @@ class TestOldCKAN(object):
     def test_import_tests(self):
         from ckantoolkit.tests.helpers import thing
         assert thing == 'that helps'
+    
+    def test_import_StopOnError(self):
+        from ckantoolkit import StopOnError
+        assert StopOnError == 'do not pass go'
+
+    def test_import_DefaultOrganizationForm(self):
+        from ckantoolkit import DefaultOrganizationForm
+        assert DefaultOrganizationForm == 'disorderly'
+    
+    def test_import_h_existing_attr(self):
+        from ckantoolkit import h
+
+    def test_import_h_existing_attr(self):
+        from ckantoolkit import h
+        assert h.icon_url('a') == 'a'
+
+    def test_import_h_missing_attr(self):
+        from ckantoolkit import h
+        assert_raises(AttributeError, getattr, h, 'no_helper_named_like_this')
