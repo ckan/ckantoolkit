@@ -29,9 +29,8 @@ class _CKANToolkit(object):
             elif name == 'DefaultOrganizationForm':
                 from ckan.lib.plugins import DefaultOrganizationForm as value
             elif name == 'h':
-                import pylons
                 from ckantoolkit.shims import HelpersNoMagic
-                value = HelpersNoMagic(pylons.config['pylons.h'])
+                value = HelpersNoMagic()
             else:
                 raise
         setattr(self, name, value) # skip this function next time
