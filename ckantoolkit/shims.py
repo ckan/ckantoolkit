@@ -6,11 +6,11 @@ class HelpersNoMagic(object):
 
     adapted from ckan/config/environment.py:_HelpersNoMagic
     """
-    def __init__(self, helpers):
-        self._helpers = helpers
-
     def __getattr__(self, name):
-        fn = getattr(self._helpers, name)
-        if fn == self._helpers.null_function:
+        import pylons
+        h = pylons.config['pylons.h']
+
+        fn = getattr(h, name)
+        if fn == h.null_function:
             raise AttributeError("No helper found named '%s'" % name)
         return fn
