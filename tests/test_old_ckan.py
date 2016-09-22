@@ -5,6 +5,7 @@ from nose.tools import assert_raises
 
 HERE = os.path.split(__file__)[0]
 
+
 class TestOldCKAN(object):
     def setUp(self):
         sys.path.append(HERE + '/old_ckan')

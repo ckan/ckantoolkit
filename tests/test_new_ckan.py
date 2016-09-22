@@ -1,8 +1,8 @@
 import sys
 import os
 
-
 HERE = os.path.split(__file__)[0]
+
 
 class TestNewCKAN(object):
     def setUp(self):

@@ -5,6 +5,7 @@ import sys
 # in the ckan.plugins.toolkit import statement
 import ckan
 
+
 class _CKANToolkit(object):
     """
     Late initialization to match ckan.plugins.toolkit
@@ -24,9 +25,11 @@ class _CKANToolkit(object):
             elif name == 'DefaultGroupForm':
                 from ckan.lib.plugins import DefaultGroupForm as value
             elif name == 'missing':
-                from ckan.lib.navl.dictization_functions import missing as value
+                from ckan.lib.navl.dictization_functions import (
+                    missing as value)
             elif name == 'StopOnError':
-                from ckan.lib.navl.dictization_functions import StopOnError as value
+                from ckan.lib.navl.dictization_functions import (
+                    StopOnError as value)
             elif name == 'DefaultOrganizationForm':
                 from ckan.lib.plugins import DefaultOrganizationForm as value
             elif name == 'h':
