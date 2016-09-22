@@ -1,3 +1,10 @@
+try:
+    # CKAN >= 2.6
+    from ckan.common import config
+except ImportError:
+    # CKAN < 2.6
+    from pylons import config
+
 
 class HelpersNoMagic(object):
     """
@@ -7,8 +14,7 @@ class HelpersNoMagic(object):
     adapted from ckan/config/environment.py:_HelpersNoMagic
     """
     def __getattr__(self, name):
-        import pylons
-        h = pylons.config['pylons.h']
+        h = config['pylons.h']
 
         fn = getattr(h, name)
         if fn == h.null_function:

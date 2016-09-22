@@ -19,6 +19,7 @@ class _CKANToolkit(object):
         except AttributeError:
             # backports here:
             if name == 'ungettext':
+                # CKAN < 2.5
                 from ckan.common import ungettext as value
             elif name == 'DefaultGroupForm':
                 from ckan.lib.plugins import DefaultGroupForm as value
@@ -31,9 +32,12 @@ class _CKANToolkit(object):
             elif name == 'h':
                 from ckantoolkit.shims import HelpersNoMagic
                 value = HelpersNoMagic()
+            elif name == 'config':
+                # CKAN < 2.6
+                from pylons import config as value
             else:
                 raise
-        setattr(self, name, value) # skip this function next time
+        setattr(self, name, value)  # skip this function next time
         return value
 
     def __dir__(self):

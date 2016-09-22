@@ -46,3 +46,7 @@ class TestNewCKAN(object):
     def test_import_h(self):
         from ckantoolkit import h
         assert h == 'seven from toolkit'
+
+    def test_import_config(self):
+        from ckantoolkit import config
+        assert config == 'eight from toolkit'
