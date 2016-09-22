@@ -1,5 +1,6 @@
 import sys
 
+
 class _CKANToolkitTests(object):
     def __getattr__(self, name):
         try:

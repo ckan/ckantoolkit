@@ -5,6 +5,7 @@ from nose.tools import assert_raises
 
 HERE = os.path.split(__file__)[0]
 
+
 class TestOldCKAN(object):
     def setUp(self):
         sys.path.append(HERE + '/old_ckan')
@@ -35,7 +36,7 @@ class TestOldCKAN(object):
     def test_import_tests(self):
         from ckantoolkit.tests.helpers import thing
         assert thing == 'that helps'
-    
+
     def test_import_StopOnError(self):
         from ckantoolkit import StopOnError
         assert StopOnError == 'do not pass go'
@@ -43,9 +44,6 @@ class TestOldCKAN(object):
     def test_import_DefaultOrganizationForm(self):
         from ckantoolkit import DefaultOrganizationForm
         assert DefaultOrganizationForm == 'disorderly'
-    
-    def test_import_h_existing_attr(self):
-        from ckantoolkit import h
 
     def test_import_h_existing_attr(self):
         from ckantoolkit import h
@@ -54,3 +52,7 @@ class TestOldCKAN(object):
     def test_import_h_missing_attr(self):
         from ckantoolkit import h
         assert_raises(AttributeError, getattr, h, 'no_helper_named_like_this')
+
+    def test_import_config(self):
+        from ckantoolkit import config
+        assert config['mock_pylons_config']
