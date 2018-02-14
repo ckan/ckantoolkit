@@ -56,3 +56,8 @@ class TestOldCKAN(object):
     def test_import_config(self):
         from ckantoolkit import config
         assert config['mock_pylons_config']
+
+    def test_import_HelperError(self):
+        from ckantoolkit import HelperError
+        error = HelperError()
+        assert isinstance(error, Exception)

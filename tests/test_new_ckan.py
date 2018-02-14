@@ -50,3 +50,7 @@ class TestNewCKAN(object):
     def test_import_config(self):
         from ckantoolkit import config
         assert config == 'eight from toolkit'
+
+    def test_import_HelperError(self):
+        from ckantoolkit import HelperError
+        assert HelperError == 'nine from toolkit'

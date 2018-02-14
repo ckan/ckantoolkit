@@ -38,6 +38,10 @@ class _CKANToolkit(object):
             elif name == 'config':
                 # CKAN < 2.6
                 from pylons import config as value
+            elif name == 'HelperError':
+                class HelperError(Exception):
+                    pass
+                value = HelperError
             else:
                 raise
         setattr(self, name, value)  # skip this function next time
