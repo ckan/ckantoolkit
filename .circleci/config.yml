@@ -11,7 +11,7 @@ jobs:
           command: python --version
       - run:
           name: Install Dependencies
-          command: pip install nose
+          command: pip install -r requirements.txt
       - run:
           name: Test Old Ckan
           command: nosetests tests/test_old_ckan.py
