@@ -1,0 +1,47 @@
+version: 2
+jobs:
+  build-python-common: &common-build
+    docker:
+      - image: python
+    working_directory: ~/ckantoolkit
+    steps:
+      - checkout
+      - run:
+          name: Python Version
+          command: python --version
+      - run:
+          name: Install Dependencies
+          command: pip install nose
+      - run:
+          name: Test Old Ckan
+          command: nosetests tests/test_old_ckan.py
+      - run:
+          name: Test New Ckan
+          command: nosetests tests/test_new_ckan.py
+  build-python27:
+    <<: *common-build
+    docker:
+      - image: python:2.7.17
+
+  build-python36:
+    <<: *common-build
+    docker:
+      - image: python:3.6.9
+
+  build-python37:
+    <<: *common-build
+    docker:
+      - image: python:3.7.5
+
+  build-python38:
+    <<: *common-build
+    docker:
+      - image: python:3.8.0
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-python27
+      - build-python36
+      - build-python37
+      - build-python38
