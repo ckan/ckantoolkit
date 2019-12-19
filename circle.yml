@@ -1,4 +1,0 @@
-test:
-  override:
-    - nosetests tests/test_old_ckan.py
-    - nosetests tests/test_new_ckan.py
