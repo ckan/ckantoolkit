@@ -42,6 +42,11 @@ class _CKANToolkit(object):
                 class HelperError(Exception):
                     pass
                 value = HelperError
+            elif name == 'unicode_safe':
+                try:
+                    from ckan.lib.navl.validators import unicode_safe as value
+                except ImportError:
+                    from ckantoolkit.shims import unicode_safe as value
             else:
                 raise
         setattr(self, name, value)  # skip this function next time
