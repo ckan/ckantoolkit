@@ -18,6 +18,6 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'six>=1.12.0'
+        'six'
     ],
 )
